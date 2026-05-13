@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spinnerGatunki;
     private Switch switchCzyNowa;
     private SeekBar seekBarPromocja;
+    private TextView tvPromocjaWartosc;
     private CheckBox checkBoxPapier, checkBoxMobi, checkBoxAudiobook, checkBoxPdf;
     private RadioGroup radioGroupKategoria;
     private RadioButton radio18plus, radio9plus, radio12plus, radio0plus;
@@ -48,6 +50,20 @@ public class MainActivity extends AppCompatActivity {
         adapter = new BookAdapter(this, listaKsiazek);
         listViewRekordy.setAdapter(adapter);
 
+        // Listener do SeekBara - aktualizuje tekst z procentami
+        seekBarPromocja.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                tvPromocjaWartosc.setText(progress + "%");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {}
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {}
+        });
+
         btnWyslij.setOnClickListener(v -> wyslijFormularz());
     }
 
@@ -58,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         spinnerGatunki = findViewById(R.id.spinnerGatunki);
         switchCzyNowa = findViewById(R.id.switchCzyNowa);
         seekBarPromocja = findViewById(R.id.seekBarPromocja);
+        tvPromocjaWartosc = findViewById(R.id.tvPromocjaWartosc);
         checkBoxPapier = findViewById(R.id.checkBoxPapier);
         checkBoxMobi = findViewById(R.id.checkBoxMobi);
         checkBoxAudiobook = findViewById(R.id.checkBoxAudiobook);
@@ -120,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
         spinnerGatunki.setSelection(0);
         switchCzyNowa.setChecked(false);
         seekBarPromocja.setProgress(0);
+        tvPromocjaWartosc.setText("0%");
         checkBoxPapier.setChecked(false);
         checkBoxMobi.setChecked(false);
         checkBoxAudiobook.setChecked(false);
