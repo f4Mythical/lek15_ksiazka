@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:hint="Tytuł"
             android:inputType="text"
+            android:text="Władca Pierścieni"
             android:layout_marginBottom="8dp"/>
 
         <EditText
@@ -34,6 +35,7 @@
             android:layout_height="wrap_content"
             android:hint="Autor"
             android:inputType="text"
+            android:text="J.R.R. Tolkien"
             android:layout_marginBottom="12dp"/>
 
         <Spinner
@@ -55,6 +57,7 @@
             android:layout_height="wrap_content"
             android:hint="Cena"
             android:inputType="numberDecimal"
+            android:text="49.99"
             android:layout_marginBottom="12dp"/>
 
         <TextView
@@ -69,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="90"
-            android:progress="0"
+            android:progress="15"
             android:layout_marginBottom="4dp"/>
 
         <LinearLayout
@@ -112,14 +115,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Papier"/>
+                android:text="Papier"
+                android:checked="true"/>
 
             <CheckBox
                 android:id="@+id/checkBoxMobi"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="mobi"/>
+                android:text="mobi"
+                android:checked="true"/>
 
         </LinearLayout>
 
@@ -141,7 +146,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="pdf"/>
+                android:text="pdf"
+                android:checked="true"/>
 
         </LinearLayout>
 
@@ -157,49 +163,37 @@
             android:id="@+id/radioGroupKategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginBottom="16dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/radio18plus"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:text="18+"/>
 
-                <RadioButton
-                    android:id="@+id/radio18plus"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="18+"/>
-
-                <RadioButton
-                    android:id="@+id/radio9plus"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="9+"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/radio12plus"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:text="12+"
+                android:checked="true"/>
 
-                <RadioButton
-                    android:id="@+id/radio12plus"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="12+"/>
+            <RadioButton
+                android:id="@+id/radio9plus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="9+"/>
 
-                <RadioButton
-                    android:id="@+id/radio0plus"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="0+"/>
-
-            </LinearLayout>
+            <RadioButton
+                android:id="@+id/radio0plus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0+"/>
 
         </RadioGroup>
 

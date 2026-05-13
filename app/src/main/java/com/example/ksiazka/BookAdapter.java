@@ -38,7 +38,7 @@ public class BookAdapter extends ArrayAdapter<Book> {
 
         if (ksiazka.getPromocja() > 0) {
             double cenaPo = ksiazka.getCena() * (1 - ksiazka.getPromocja() / 100.0);
-            tvCena.setText(String.format("%.2f zł  (-%d%%  →  %.2f zł)",
+            tvCena.setText(String.format("%.2f zł  (-%d%%  ->  %.2f zł)",
                     ksiazka.getCena(), ksiazka.getPromocja(), cenaPo));
         } else {
             tvCena.setText(String.format("%.2f zł", ksiazka.getCena()));
@@ -46,7 +46,7 @@ public class BookAdapter extends ArrayAdapter<Book> {
 
         tvDostepnosc.setText("Dostępna: " + ksiazka.getDostepnosc());
         tvKategoria.setText("Wiek: " + ksiazka.getKategoriaWiekowa());
-        tvStatus.setText(ksiazka.isCzNowa() ? "✦ NOWOŚĆ" : "");
+        tvStatus.setText(ksiazka.isCzNowa() ? "NOWOŚĆ" : "");
 
         return convertView;
     }
