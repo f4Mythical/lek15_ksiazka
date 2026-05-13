@@ -9,10 +9,9 @@ public class Book {
     private int promocja;
     private String dostepnosc;
     private String kategoriaWiekowa;
-    private float ocena;
 
     public Book(String tytul, String autor, String gatunek, boolean czNowa,
-                double cena, int promocja, String dostepnosc, String kategoriaWiekowa, float ocena) {
+                double cena, int promocja, String dostepnosc, String kategoriaWiekowa) {
         this.tytul = tytul;
         this.autor = autor;
         this.gatunek = gatunek;
@@ -21,7 +20,6 @@ public class Book {
         this.promocja = promocja;
         this.dostepnosc = dostepnosc;
         this.kategoriaWiekowa = kategoriaWiekowa;
-        this.ocena = ocena;
     }
 
     public String getTytul() { return tytul; }
@@ -32,5 +30,4 @@ public class Book {
     public int getPromocja() { return promocja; }
     public String getDostepnosc() { return dostepnosc; }
     public String getKategoriaWiekowa() { return kategoriaWiekowa; }
-    public float getOcena() { return ocena; }
 }
